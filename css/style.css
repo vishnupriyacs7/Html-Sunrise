@@ -23,24 +23,24 @@ body{
 @keyframes fadeOut {
     0% { opacity: 0.9; }
     100% { opacity: 0.1; }
-}
+} 
 .sunrise-sky {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50%; /* Only top half */
-    background: linear-gradient(to bottom, #FFA07A, #87CEFA00); /* sunrise orange to transparent */
+    height: 50%; 
+    background: linear-gradient(to bottom, #FFA07A, #87CEFA00); 
     opacity: 0;
     animation: showSky 10s ease-in-out forwards;
-    animation-delay: 3s; /* Slight delay for realism */
-    z-index: 0.5; /* below overlay but above background */
+    animation-delay: 3s; 
+    z-index: 0.5; 
 }
 @keyframes showSky {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-.sun {
+ .sun {
     position: absolute;
     top: 40px;
     left: 30%;
@@ -68,15 +68,18 @@ body{
 .hiker {
     position: absolute;
     bottom: -80px;
-    left: 48%;
+    left: 84%;
     width: 50px;
     height: 70px;
-    background: url("/images/hiker.png") no-repeat center/contain;
-    animation: climbHiker 15s ease-in-out forwards;
+    background: url("/images/source.gif") no-repeat center/contain;
+    background-size: 200%;
+    animation: climbHiker 35s ease-in-out forwards;
     animation-delay: 3s;
     z-index: 3;
 }
 @keyframes climbHiker {
-    0% { bottom: -80px; }
-    100% { bottom: 180px; }
+    0% { bottom: -8px; }
+    40% { left: 80%; }
+    60% { left: 70%; }
+    100% { bottom: 280px; }
 }
