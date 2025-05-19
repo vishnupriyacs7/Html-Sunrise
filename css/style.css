@@ -9,11 +9,25 @@ body{
 }
 .overlay {
     position: absolute;
-    top: 0; left: 0;
+    top: 0; 
+    left: 0;
     width: 100%;
     height: 100%;
     background: black;
     opacity: 0.9;
     transition: opacity 10s ease-in-out;
     z-index: 2;
+}
+.sun {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    transition: bottom 15s ease-in-out, opacity 10s ease-in;
 }
