@@ -3,8 +3,10 @@ body{
     height: 100vh;
     margin: 0;
     padding: 0;
+    position: relative;
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 .overlay {
@@ -15,19 +17,34 @@ body{
     height: 100%;
     background: black;
     opacity: 0.9;
-    transition: opacity 10s ease-in-out;
+    animation: fadeOut 20s ease-in-out forwards;
     z-index: 2;
+}
+@keyframes fadeOut {
+    0% { opacity: 0.9; }
+    100% { opacity: 0.1; }
 }
 .sun {
     position: absolute;
-    bottom: -100px;
-    left: 50%;
+    top: 50px;
+    left: 30%;
     transform: translateX(-50%);
     width: 100px;
     height: 100px;
     background: radial-gradient(circle, #FFD700, #FFA500);
     border-radius: 50%;
-    z-index: 1;
     opacity: 0;
-    transition: bottom 15s ease-in-out, opacity 10s ease-in;
+    animation: sunrise 15s ease-in-out forwards;
+    animation-delay: 5s;
+    z-index: 1;
+}
+@keyframes sunrise {
+    0% {
+        opacity: 0;
+        filter: brightness(0.5);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1.2);
+    }
 }
